@@ -35,4 +35,7 @@
     5. 找到ssh文件下新生成的.pub后缀的文件，复制里面的内容，根据第二步找到位置，添加公钥  
     6. 测试验证是否连接成功，公司：`ssh -T git@172.55.5.101`，github：`ssh -T git@github.com`，@后面加域名，与config配置文件里保持一致
     7. 验证时，如果出现`Permission denied (publickey)`问题，在config文件中对应的域名下加上`PubkeyAcceptedKeyTypes +ssh-rsa`，目前github验证成功了，公司的域名出现`git@172.55.5.101: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).`，但是能正常clone、pull、push，猜测是公司管理员设置了权限
-4. 
+4. gitlab、gitee、github网站界面与功能有些差异，但大致相同  
+   - 建项目仓库，建分支，如果项目上线的话，还有就是公用仓库，至少两个分支，dev、test、main，各分支最好设置权限，把main保护起来，三者保护规则不同
+   - 三者clone、commit、pull、push、merge等git命令是通用的
+   - gitlab与gitee适合国内使用，速度快，后者比前者更强大，github目前的优势估计只剩下国内外开源项目比较多，范围较广
